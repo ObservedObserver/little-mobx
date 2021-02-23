@@ -20,8 +20,10 @@ export class ComputedValue<T> {
         const reaction = new Reaction(() => {
             const newResult = expression();
             // console.log('update cache', this.nodeId);
-            this.cacheValue = newResult;
-            this.notify();
+            if (this.cacheValue !== newResult) {
+                this.cacheValue = newResult;
+                this.notify();
+            }
         });
         const oc = new ObservableCollection();
         // 讨论, oc.clear()是否要在track里实现

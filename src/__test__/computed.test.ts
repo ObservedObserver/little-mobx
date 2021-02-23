@@ -81,5 +81,5 @@ test('computed as deps', () => {
         apple.amount++;
     }
 
-    expect(computedCount).toBe(5)
+    expect(computedCount).toBe(1)
 })

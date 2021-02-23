@@ -44,7 +44,7 @@ autorun(() => {
 for (let i = 0; i < 10; i++) {
     apple.amount++;
 }
-expect(computedCount).toBe(5)
+expect(computedCount).toBe(1)
 ```
 
 ### Reaction
