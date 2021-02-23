@@ -1,8 +1,9 @@
 # little-mobx
 
-a state management tool based on observables.
+目前 这是一个mobx实现原理的学习repo，尝试实现一个简易的mobx，理解其基本设计。梳理一些总结与思考。
 
 
+## 使用
 ```ts
 import { autorun, observable } from 'little-mobx';
 

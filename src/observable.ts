@@ -34,8 +34,8 @@ export function observable <T extends object>(targetObj: T): T {
                     target[propKey as keyof T] = value;
                     const obkey = `${target[__INDEX_KEY__ as keyof T]}_${propKey.toString()}_${obId}`
                         if (derivationMap.has(obkey)) {
-                            const runner = derivationMap.get(obkey)!;
-                            runner();
+                            const runners = derivationMap.get(obkey)!;
+                            runners.forEach(runner => runner());
                         }
                 }
                 return true;
