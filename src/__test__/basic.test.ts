@@ -11,7 +11,7 @@ test('basic', () => {
     const ansCollection: number[] = [];
 
     autorun(() => {
-        console.log(apple.price * apple.amount);
+        // console.log(apple.price * apple.amount);
         ansCollection.push(apple.price * apple.amount);
     });
 
@@ -36,10 +36,10 @@ test('autorun context', () => {
 
     const ans: number[] = [];
 
-    console.log(apple.amount * apple.price);
+    // console.log(apple.amount * apple.price);
 
     autorun(() => {
-        console.log('only get price', apple.price);
+        // console.log('only get price', apple.price);
         ans.push(apple.price)
     })
     // 不会被触发

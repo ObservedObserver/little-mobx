@@ -3,6 +3,7 @@ import { derivationMap } from "./derivation";
 
 export class Reaction<S extends Function> {
     private subscription: S;
+    // private 
     constructor (subscription: S) {
         this.subscription = subscription;
     }
@@ -10,7 +11,7 @@ export class Reaction<S extends Function> {
         const subscription = this.subscription;
         const oc = new ObservableCollection();
         oc.startCollect();
-        trakFunction();
+        const result = trakFunction();
         const collection = oc.getCollection();
         collection.forEach(ob => {
             if (!derivationMap.has(ob)) {
@@ -18,8 +19,9 @@ export class Reaction<S extends Function> {
             }
             derivationMap.get(ob)!.push(subscription);
         })
-        console.log(derivationMap)
+        // console.log(derivationMap)
         oc.endCollect();
-        oc.clear();
+        // oc.clear();
+        return result;
     }
 }

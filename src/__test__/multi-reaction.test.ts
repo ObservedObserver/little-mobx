@@ -12,22 +12,22 @@ test('multi', () => {
     const priceAns: number[] = [];
     const amountAns: number[] = [];
     autorun(() => {
-        console.log('price', apple.price)
+        // console.log('price', apple.price)
         priceAns.push(apple.price)
     })
 
     autorun(() => {
-        console.log('amount', apple.amount)
+        // console.log('amount', apple.amount)
         amountAns.push(apple.amount);
     })
 
     autorun(() => {
-        console.log(apple.price * apple.amount);
+        // console.log(apple.price * apple.amount);
         costAns.push(apple.price * apple.amount);
     });
 
     autorun(() => {
-        console.log('fruit type is ', apple.type)
+        // console.log('fruit type is ', apple.type)
         nameAns.push(apple.type)
     })
 
@@ -45,7 +45,7 @@ test('multi', () => {
     expect(priceAns.length).toBe(2);
     expect(priceAns).toEqual([2, 3])
 
-    expect(amountAns.length).toBe(3)
+    // expect(amountAns.length).toBe(3)
     expect(amountAns).toEqual([0, 1, 20])
 
     expect(nameAns.length).toBe(2)

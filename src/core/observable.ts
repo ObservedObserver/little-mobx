@@ -20,7 +20,6 @@ export function observable <T extends object>(targetObj: T): T {
     })
     return new Proxy<T>(targetObj, {
         get (target, propKey) {
-            // TODO: 必须在autoRun的环境下才收集依赖
             const oc = new ObservableCollection();
             if (oc.isCollecting()) {
                 const obkey = `${target[__INDEX_KEY__ as keyof T]}_${propKey.toString()}_${obId}`
