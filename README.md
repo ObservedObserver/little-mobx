@@ -1,4 +1,5 @@
 # little-mobx :lollipop:
+![](https://travis-ci.org/ObservedObserver/little-mobx.svg?branch=main)
 
 目前 这是一个mobx实现原理的学习repo，尝试实现一个简易的mobx，理解其基本设计。梳理一些总结与思考。
 
@@ -11,7 +12,7 @@
 
 ### autorun
 + `autorun`用来接受一个函数，并能收集这个函数中使用到的observable，在这些observable的值发生变化时，能够自动触发autorun接受的函数去执行。
-+`autorun`在第一次使用时会默认执行一次，通过第一次的执行来检查哪些observable的get被调用了，并记收集这些属性。
++ `autorun`在第一次使用时会默认执行一次，通过第一次的执行来检查哪些observable的get被调用了，并记收集这些属性。
 
 ### ComputedValue (TODO:computed)
 ```ts
