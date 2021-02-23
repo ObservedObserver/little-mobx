@@ -13,8 +13,12 @@
 + `autorun`用来接受一个函数，并能收集这个函数中使用到的observable，在这些observable的值发生变化时，能够自动触发autorun接受的函数去执行。
 +`autorun`在第一次使用时会默认执行一次，通过第一次的执行来检查哪些observable的get被调用了，并记收集这些属性。
 
-### computed
-+ `computed`具备observable和autorun的性质
+### ComputedValue (TODO:computed)
+```ts
+const computed = new ComputedValue(expression: () => any);
+console.log(computed.value)
+```
++ `ComputedValue`具备observable和autorun的性质
     + computed会在定义时进行一次初始计算，并把计算值缓存，同时收集它自己调用的observable或者computed。并把自己作为订阅交给这些依赖。使得这些依赖更新的时候会触发当前computed值的重新计算。
     + 当前的computed值更新后，会通知订阅当前computed的computed或者autorun更新。
 ```ts
